@@ -156,6 +156,11 @@ out=False
 alive=False
 thread=40
 
+# Check if no arguments provided
+if [ $# -eq 0 ]; then
+    Usage
+fi
+
 # Process command line arguments
 while [ -n "$1" ]; do
 	case $1 in
