@@ -126,7 +126,7 @@ PROCESS_RESULTS() {
 
 	# Scan for JavaScript files using katana
 	echo "[+] Running katana scan for JavaScript files..."
-	katana -list "tmp-alive-$domain.txt" -d 5 -jc | grep ".js$" | anew "js-files-$domain.txt" >/dev/null
+	katana -list "tmp-alive-$domain.txt" -d 5 -jc | grep -E '\.(js|jsp|php|json)$' | anew "js-files-$domain.txt" >/dev/null
 	echo "[+] JavaScript files saved to: js-files-$domain.txt"
 	
 	# Clean up temporary files
